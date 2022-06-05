@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class Product_cards extends StatefulWidget {
   const Product_cards({super.key});
 
@@ -13,7 +12,6 @@ class _Product_cardsState extends State<Product_cards> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Gothampro'),
       home: DefaultTabController(
         length: 3,
         child: Scaffold(
@@ -147,7 +145,7 @@ Widget _Categoriya() {
                           ],
                         ),
                         SizedBox(
-                          width: 20,
+                          width: 30,
                         ),
                         CircleAvatar(
                           radius: 20,
@@ -167,7 +165,6 @@ Widget _Categoriya() {
                     Text('50.000 Сум - за 1 кг'),
                   ]),
             );
-
           })),
       GridView.builder(
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
