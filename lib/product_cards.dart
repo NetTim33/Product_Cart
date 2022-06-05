@@ -12,6 +12,7 @@ class _Product_cardsState extends State<Product_cards> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Gothampro'),
       home: DefaultTabController(
         length: 3,
         child: Scaffold(
@@ -30,7 +31,8 @@ class _Product_cardsState extends State<Product_cards> {
                 onPressed: () {}),
             title: Text(
               'Карточки продуктов',
-              style: TextStyle(color: Colors.black54),
+              style: TextStyle(
+                  color: Colors.blueGrey[900], fontFamily: 'Gotham Pro Medium'),
             ),
           ),
           body: Column(
@@ -105,127 +107,1569 @@ class _Product_cardsState extends State<Product_cards> {
 Widget _Categoriya() {
   return Expanded(
     child: TabBarView(children: [
-      GridView.builder(
-          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 300.0,
-              mainAxisSpacing: 20.0,
-              crossAxisSpacing: 20.0,
-              childAspectRatio: 0.8),
-          itemCount: 6,
-          itemBuilder: ((context, index) {
-            return Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.amberAccent[100]),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image(
-                      image: AssetImage(
-                        'assets/images/image1.png',
+      GridView.count(
+        primary: false,
+        padding: const EdgeInsets.all(10),
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        crossAxisCount: 2,
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.amberAccent[100]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image1.png',
+                ),
+                width: 90,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Киви',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
                       ),
-                      width: 90,
-                    ),
-                    Image(
-                      image: AssetImage(
-                        'assets/images/image8.png',
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
                       ),
-                      width: 80,
-                      // height: 10,
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
                     ),
-                    Row(
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              'Киви',
-                              style: TextStyle(),
-                            ),
-                            Text(' Органик продукт'),
-                          ],
-                        ),
-                        SizedBox(
-                          width: 30,
-                        ),
-                        CircleAvatar(
-                          radius: 20,
-                          backgroundColor: Colors.grey[850],
-                          child: IconButton(
-                            icon: const Icon(Icons.shopping_bag_outlined),
-                            color: Colors.white,
-                            onPressed: () {},
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Text('50.000 сум'),
-                    Text('50.000 Сум - за 1 кг'),
-                  ]),
-            );
-          })),
-      GridView.builder(
-          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 200.0,
-              mainAxisSpacing: 20.0,
-              crossAxisSpacing: 20.0,
-              childAspectRatio: 0.8),
-          itemCount: 8,
-          itemBuilder: ((context, index) {
-            return Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.orange),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image(
-                      image: AssetImage(
-                        'assets/images/pear.png',
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.amberAccent),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image5.png',
+                ),
+                width: 90,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Персик',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
                       ),
-                      width: 60,
-                    ),
-                    Text('Продукт'),
-                    Icon(
-                      Icons.shopping_bag_outlined,
-                      size: 30,
-                    ),
-                    Text('50.000 сум')
-                  ]),
-            );
-          })),
-      GridView.builder(
-          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 200.0,
-              mainAxisSpacing: 20.0,
-              crossAxisSpacing: 20.0,
-              childAspectRatio: 0.8),
-          itemCount: 6,
-          itemBuilder: ((context, index) {
-            return Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.orange),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image(
-                      image: AssetImage(
-                        'assets/images/pear.png',
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
                       ),
-                      width: 60,
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
                     ),
-                    Text('Продукт'),
-                    Icon(
-                      Icons.shopping_bag_outlined,
-                      size: 30,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.green[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image2.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Авакадо',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
                     ),
-                    Text('50.000 сум')
-                  ]),
-            );
-          })),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.deepOrange[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image3.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Клубника',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.amberAccent[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image4.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Яблоко',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.green[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image2.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Авакадо',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.deepOrange[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image3.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Клубника',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.amberAccent[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image4.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Яблоко',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+        ],
+      ),
+      GridView.count(
+        primary: false,
+        padding: const EdgeInsets.all(10),
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        crossAxisCount: 2,
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.amberAccent[100]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image1.png',
+                ),
+                width: 90,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Киви',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.amberAccent),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image5.png',
+                ),
+                width: 90,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Персик',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.green[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image2.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Авакадо',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.deepOrange[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image3.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Клубника',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.amberAccent[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image4.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Яблоко',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.green[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image2.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Авакадо',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.deepOrange[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image3.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Клубника',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.amberAccent[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image4.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Яблоко',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+        ],
+      ),
+      GridView.count(
+        primary: false,
+        padding: const EdgeInsets.all(10),
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        crossAxisCount: 2,
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.amberAccent[100]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image1.png',
+                ),
+                width: 90,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Киви',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.amberAccent),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image5.png',
+                ),
+                width: 90,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Персик',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.green[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image2.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Авакадо',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.deepOrange[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image3.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Клубника',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.amberAccent[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image4.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Яблоко',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.green[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image2.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Авакадо',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.deepOrange[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image3.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Клубника',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.amberAccent[200]),
+            height: 250,
+            width: 158,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image(
+                image: AssetImage(
+                  'assets/images/image4.png',
+                ),
+                width: 70,
+              ),
+              Image(
+                image: AssetImage(
+                  'assets/images/image8.png',
+                ),
+                width: 80,
+                // height: 10,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Яблоко',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Medium', fontSize: 15),
+                      ),
+                      Text(
+                        ' Органик продукт',
+                        style: TextStyle(
+                            fontFamily: 'Gotham Pro Regular', fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.grey[850],
+                    child: IconButton(
+                      icon: const Icon(Icons.shopping_bag_outlined),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '50.000 сум',
+                style: TextStyle(fontFamily: 'Gotham Pro Medium', fontSize: 15),
+              ),
+              Text(
+                '50.000 Сум - за 1 кг',
+                style: TextStyle(fontFamily: 'Gotham Pro Regular', fontSize: 8),
+              ),
+            ]),
+          ),
+        ],
+      ),
     ]),
   );
 }
